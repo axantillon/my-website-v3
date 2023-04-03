@@ -10,6 +10,7 @@ const client = createClient(
 		appName: "axantillon's digital haven",
 		autoConnect: true,
 		infuraId: apiKey,
+        appIcon: 'https://axantillon.xyz/favicon.ico',
 	})
 )
 
