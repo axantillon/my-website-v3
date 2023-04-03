@@ -1,6 +1,7 @@
 'use client'
 import { useTheme } from "next-themes";
 import { FC, useEffect, useRef, useState } from "react";
+import { ConnectButton } from "./utils/connectButton";
 var ReactRotatingText = require('react-rotating-text');
 
 export const Hello: FC = () => {
@@ -23,7 +24,11 @@ export const Hello: FC = () => {
     }
 
     return (
-        <div className="w-full flex flex-col pt-32 md:pt-52 px-12 md:px-20">
+        <div className="w-full flex flex-col pt-32 md:pt-40 px-12 md:px-20">
+            <div className="flex px-2 py-8 space-x-1">
+                <span>hey,</span>
+                <ConnectButton/>
+            </div>
             <style>
                 {`
                     .react-rotating-text-cursor {

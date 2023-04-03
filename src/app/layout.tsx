@@ -1,6 +1,7 @@
-import 'tailwindcss/tailwind.css' 
-import { Space_Mono} from 'next/font/google'
 import ThemeProvider from '@/context/themeProvider'
+import Web3Provider from '@/context/web3Provider'
+import { Space_Mono } from 'next/font/google'
+import 'tailwindcss/tailwind.css'
 
 const space = Space_Mono({
   subsets: ['latin'],
@@ -10,7 +11,7 @@ const space = Space_Mono({
 
 export const metadata = {
   title: 'axantillon',
-  description: 'website of axantillon',
+  description: "axantillon's digital haven",
 }
 
 export default function RootLayout({
@@ -21,9 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={space.className}>
         <body className=''>
-            <ThemeProvider attribute='class'>
-              {children}
-            </ThemeProvider>
+            <Web3Provider>
+                <ThemeProvider attribute='class'>
+                  {children}
+                </ThemeProvider>
+            </Web3Provider>
         </body> 
     </html>
   )

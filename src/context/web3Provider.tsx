@@ -1,0 +1,25 @@
+'use client'
+import { ConnectKitProvider, getDefaultClient } from 'connectkit'
+import { ReactNode } from 'react'
+import { WagmiConfig, createClient } from 'wagmi'
+
+const apiKey = process.env.INFURA_API_KEY || ''
+
+const client = createClient(
+	getDefaultClient({
+		appName: "axantillon's digital haven",
+		autoConnect: true,
+		infuraId: apiKey,
+	})
+)
+
+const Web3Provider = ({ children }: {children: ReactNode}) => {
+
+    return (
+        <WagmiConfig client={client}>
+            <ConnectKitProvider theme="nouns">{children}</ConnectKitProvider>
+        </WagmiConfig>
+    )
+}
+
+export default Web3Provider
