@@ -13,8 +13,6 @@
     "@types/react": "18.0.31",
     "@types/react-dom": "18.0.11",
     "connectkit": "^1.2.2",
-    "eslint": "8.37.0",
-    "eslint-config-next": "13.2.4",
     "ethers": "^5",
     "next": "13.2.4",
     "next-themes": "^0.2.1",
@@ -23,7 +21,7 @@
     "react-icons": "^4.8.0",
     "react-rotating-text": "^1.4.1",
     "typescript": "5.0.2",
-    "wagmi": "^0.12.8"
+    "wagmi": "^0.12.9"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
