@@ -18,7 +18,7 @@ const Web3Provider = ({ children }: {children: ReactNode}) => {
 
     return (
         <WagmiConfig client={client}>
-            <ConnectKitProvider theme="nouns">{children}</ConnectKitProvider>
+            <ConnectKitProvider>{children}</ConnectKitProvider>
         </WagmiConfig>
     )
 }

@@ -17,15 +17,16 @@ export const Hello: FC = () => {
 
     useEffect(() => {
         setMounted(true)
-    }, [])
+        setColorScheme(resolvedTheme === 'dark' ? darkColors : lightColors)
+    }, [resolvedTheme])
 
     if (!mounted) {
         return null
     }
 
     return (
-        <div className="w-full flex flex-col pt-32 md:pt-40 px-12 md:px-20">
-            <div className="flex px-2 py-8 space-x-1">
+        <div className="flex flex-col justify-center w-full h-[50vh] sm:h-[75vh] px-2 sm:px-12">
+            <div className="flex sm:px-2 py-8 space-x-1">
                 <span>hey,</span>
                 <ConnectButton/>
             </div>
