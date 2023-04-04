@@ -13,20 +13,14 @@ export const Hello: FC = () => {
     const [currentColor, setCurrentColor] = useState<number>(0);
     const { resolvedTheme } = useTheme();
     const [colorScheme, setColorScheme] = useState<Array<string>>( resolvedTheme === 'dark' ? darkColors : lightColors)
-    const [mounted, setMounted] = useState(false)
 
     useEffect(() => {
-        setMounted(true)
         setColorScheme(resolvedTheme === 'dark' ? darkColors : lightColors)
     }, [resolvedTheme])
 
-    if (!mounted) {
-        return null
-    }
-
     return (
         <div className="flex flex-col justify-center w-full h-[50vh] sm:h-[75vh] px-2 sm:px-12">
-            <div className="flex sm:px-2 py-8 space-x-1">
+            <div className="h-8 flex sm:px-2 my-8 space-x-1">
                 <span>hey,</span>
                 <ConnectButton/>
             </div>

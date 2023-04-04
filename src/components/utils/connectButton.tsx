@@ -8,7 +8,7 @@ export const ConnectButton: FC = () => {
         <ConnectKitButton.Custom>
             {({ isConnected, truncatedAddress, show, ensName }) => {
                 return (
-                    <div onClick={show} className="px-2 rounded-md border border-black dark:border-white cursor-pointer">
+                    <div onClick={show} className="h-7 px-2 rounded-md border border-black dark:border-white cursor-pointer">
                         {isConnected ? 
                             ensName ? 
                                 ensName : truncatedAddress 
