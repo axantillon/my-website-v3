@@ -1,4 +1,5 @@
-import { NavBar } from '@/components/navBar'
+import { Footer } from '@/components/layout/footer'
+import { NavBar } from '@/components/layout/navBar'
 import ThemeProvider from '@/context/themeProvider'
 import Web3Provider from '@/context/web3Provider'
 import { Space_Mono } from 'next/font/google'
@@ -27,6 +28,7 @@ export default function RootLayout({
                 <ThemeProvider attribute='class'>
                   <NavBar/>
                   {children}
+                  <Footer/>
                 </ThemeProvider>
             </Web3Provider>
         </body> 

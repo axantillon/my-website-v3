@@ -13,7 +13,7 @@ const getProjects = async () => {
     return res.json();
 }
 
-export default async function ProjectGrid({limit=false}: {limit: boolean}) {
+export default async function ProjectGrid({limit=false}: {limit?: boolean}) {
 
     let projects = await getProjects() as ProjectType[];
 
