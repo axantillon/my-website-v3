@@ -22,13 +22,13 @@ export default async function ProjectGrid({limit=false}: {limit?: boolean}) {
     }
 
     return (
-        <div className="flex flex-wrap space-x-8">
+        <div className="flex flex-wrap">
             {projects.map((prj, i) => (
                 <ProjectBlock prj={prj} key={i}/>
             ))}
             {limit && (
                 <Link href={'/projects'}>
-                    <div className="flex items-center w-72 h-44 p-4 border border-black rounded-sm">
+                    <div className="flex items-center w-36 h-64 md:w-64 md:h-44 mr-2 md:mr-12 mb-8 p-4 border border-black rounded-sm">
                         <span className="underline">View All...</span>
                     </div>
                 </Link>

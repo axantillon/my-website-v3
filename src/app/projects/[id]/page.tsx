@@ -4,7 +4,7 @@ import { ProjectType } from "@/types/projects";
 import { FiLink, FiGithub } from "react-icons/fi";
 
 const getProjectContent = async (id: string) => {
-    const res = await fetch(`https://notion-api.splitbee.io/v1/page/${id}`);
+    const res = await fetch(`https://notion-api.splitbee.io/v1/page/${id}`, {cache: 'no-cache'});
 
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary
@@ -20,19 +20,21 @@ export default async function ProjectPage({ params }: {params: {id: string}}) {
     const props = extractProperties(params.id, projectContent);
 
     return (
-        <div className="flex flex-col px-12 space-y-8">
+        <div className="flex flex-col space-y-8">
 
             <div className="flex flex-col space-y-4 p-6 border border-black rounded-sm">
                 <span className="text-xl">{props.Name}</span>
                 <span>{props.description}</span>
-                <div className="flex space-x-4 text-sm">
-                    <span className="px-2 py-1 bg-black/5 rounded-md">{props.language}</span>
-                    <span className="px-2 py-1 bg-black/5 rounded-md">{props.framework}</span>
-                    <a href={props.link} className="flex w-6 h-6 items-center justify-center cursor-pointer rounded-lg hover:bg-black/5">
+                <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 space-x-0 md:space-x-4 text-sm">
+                    <span className="h-min w-min px-2 py-1 bg-black/5 rounded-md">{props.language}</span>
+                    <span className="h-min w-min px-2 py-1 bg-black/5 rounded-md">{props.framework}</span>
+                    <a href={props.link} className="flex space-x-1 px-2 py-1 items-center md:justify-center cursor-pointer rounded-lg bg-black/5">
                         <FiLink/>
+                        <span>{props.link}</span>
                     </a>
-                    <a href={props.repo} className="flex w-6 h-6 items-center justify-center cursor-pointer rounded-lg hover:bg-black/5">
+                    <a href={props.repo} className="flex w-min space-x-1 px-2 py-1 items-center md:justify-center cursor-pointer rounded-lg bg-black/5">
                         <FiGithub/>
+                        <span>github</span>
                     </a>
                 </div>
             </div>

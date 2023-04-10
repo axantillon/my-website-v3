@@ -27,7 +27,9 @@ export default function RootLayout({
             <Web3Provider>
                 <ThemeProvider attribute='class'>
                   <NavBar/>
-                  {children}
+                  <main className="min-h-screen w-screen px-6 sm:px-10">
+                    {children}
+                  </main>
                   <Footer/>
                 </ThemeProvider>
             </Web3Provider>

@@ -3,7 +3,7 @@ import ProjectGrid from "@/components/projects/projectGrid";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen w-screen px-4 sm:px-10">
+    <div className="flex flex-col">
         <Hello/>
 
         <div className="flex flex-col space-y-6">
@@ -15,6 +15,6 @@ export default function Home() {
           {/* @ts-expect-error Async Server Component */}
           <ProjectGrid limit={true}/>
         </div>
-    </main>
+    </div>
   )
 }
