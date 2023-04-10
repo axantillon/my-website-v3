@@ -1,6 +1,6 @@
 import { FC } from "react"
-import { BreadCrumb } from "./utils/breadcrumb"
-import { DarkToggle } from "./utils/darkToggle"
+import { BreadCrumb } from "../utils/breadcrumb"
+import { DarkToggle } from "../utils/darkToggle"
 
 export const NavBar: FC = () => {
 
